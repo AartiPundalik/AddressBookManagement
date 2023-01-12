@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBookManagement
 {
-    internal class Address
+    public class Address
     {
         List<Contact> contacts = new List<Contact>();
         Contact contact;
@@ -14,7 +14,7 @@ namespace AddressBookManagement
         public void Entry()
         {
             contact = new Contact();
-           
+
             Console.WriteLine("Enter your first_name");
             contact.First_Name = Console.ReadLine();
             Console.WriteLine("Enter your last_name");
@@ -47,8 +47,18 @@ namespace AddressBookManagement
         }
 
 
+
+        public void Display()
+        {
+            foreach (var Contact in contacts)
+            {
+                Console.WriteLine("---------Contact Details--------");
+                Console.WriteLine("Contact number:{0}", contacts.IndexOf(Contact) + 1);
+                Console.WriteLine(Contact.ToString());
+            }
+        }
+
         //public void Edit()
-        //{
         //    Console.WriteLine("Enter the name of contact do you want to edit : ");
         //    string name = Convert.ToString(Console.ReadLine());
         //    foreach (var data in contacts)
@@ -113,26 +123,33 @@ namespace AddressBookManagement
         //            //Console.WriteLine("Contact not found{0}", name);
 
         //        }
-        //    }
-            public void RemoveDetails()
+        //}
+        //public void RemoveDetails()
+        //{
+        //    Console.WriteLine("Enter the first Name");
+        //    string FirstName = Console.ReadLine();
+        //    Console.WriteLine("Enter the last Name");
+        //    string LastName = Console.ReadLine();
+        //    Contact contact = new Contact();
+        //    contact.Remove(contact);
+        //    Console.WriteLine("Contacts are successfully Deleted");
+        //    Console.ReadLine();
+
+        //}
+        //}
+        public void AddMultipleContact()
         {
-            Console.WriteLine("Enter the first Name");
-            string FirstName = Console.ReadLine();
-            Console.WriteLine("Enter the last Name");
-            string LastName = Console.ReadLine();
-            Contact contact = new Contact();
-            contact.Remove(contact);
-            Console.WriteLine("Contacts are successfully Deleted");
-            Console.ReadLine();
-
-        }
-    }
-
-
-
-
+            Console.WriteLine("Enter Number of Contacts to be Added:");
+            int input = Convert.ToInt32(Console.ReadLine());
+            while (input > 0)
+            {
+                Entry();
+                input--;
             }
-        
+            Display();
+        }
 
+    }
+}
 
    
