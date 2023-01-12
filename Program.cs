@@ -8,10 +8,13 @@ namespace AddressBookManagement
 {
     internal class Program
     {
-        static void Main(string[] args)
+ public static void Main(string[] args)
         {
             Console.WriteLine("welcome to the address book");
-
+            Address address = new Address();
+            //address.Entry();
+            //address.Edit();
+            address.RemoveDetails();
         }
     }
 }

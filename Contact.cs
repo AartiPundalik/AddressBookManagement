@@ -39,5 +39,10 @@ namespace AddressBookManagement
 
 
         }
+
+        internal void Remove(Contact contact)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
